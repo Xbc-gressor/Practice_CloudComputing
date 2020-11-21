@@ -23,9 +23,10 @@ public class DBController {
     public String statement(HttpServletRequest request){
         final int id = 1;
         final String jdbcDriver = "com.mysql.cj.jdbc.Driver";
-        final String url = "jdbc:mysql://localhost:3306/whu";
+        final String url = "jdbc:mysql://localhost:3306/whu?serverTimezone=UTC";
         final String username = "root";
-        final String password = "root";
+        final String password = "xiaobaicai12581";
+        // 查询id为1的用户
         final String sql = "select id,username,password,nickname from user where id = " + id;
         try {
             //加载驱动 mysql8以后的驱动 com.mysql.cj.jdbc.Driver
@@ -62,9 +63,9 @@ public class DBController {
     public String preparedStatement(HttpServletRequest request){
         int id = 2;
         final String jdbcDriver = "com.mysql.cj.jdbc.Driver";
-        final String url = "jdbc:mysql://localhost:3306/whu";
+        final String url = "jdbc:mysql://localhost:3306/whu?serverTimezone=UTC";
         final String username = "root";
-        final String password = "root";
+        final String password = "xiaobaicai12581";
         final String sql = "select id,username,password,nickname from user where id = ?;";
         try {
             Class.forName(jdbcDriver);
